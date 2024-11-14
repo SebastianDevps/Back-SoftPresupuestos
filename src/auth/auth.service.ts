@@ -37,6 +37,7 @@ export class AuthService {
 		}
 	}
 
+
 	async resetUserPassword(adminUser: IUser, userEmailToReset: string) {
 		if (adminUser.role !== 'superadmin') {
 			throw new ForbiddenException(
@@ -62,4 +63,10 @@ export class AuthService {
 			temporaryPassword: newPassword,
 		}
 	}
+
+
+  async getProfile(email:string) {
+    const user = await this.userService.findOne(email)
+    return {...user, password:undefined}
+  }
 }

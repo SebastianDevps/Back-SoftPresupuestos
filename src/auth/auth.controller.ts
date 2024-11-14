@@ -44,9 +44,10 @@ export class AuthController {
 		status: 401,
 		description: 'No estás autenticado',
 	})
+	@UseGuards(JwtAuthGuard)
 	@Get('profile')
 	getProfile(@Request() req) {
-		return req.user
+		return this.authService.getProfile(req.user.email)
 	}
 
 	@ApiOperation({ 

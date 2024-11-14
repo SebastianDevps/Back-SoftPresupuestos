@@ -23,7 +23,7 @@ export class User {
   @Column()
   password: string
 
-  @Column({ default: true })
+  @Column({ default: false })
   isActive: boolean
 
   @Column({ default: 'user' })
