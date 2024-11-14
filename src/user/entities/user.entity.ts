@@ -14,11 +14,20 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column()
+  @Column({ nullable: true })
+  name: string
+
+  @Column({ unique: true })
   email: string
 
   @Column()
   password: string
+
+  @Column({ default: true })
+  isActive: boolean
+
+  @Column({ default: 'user' })
+  role: string
 
   @OneToMany(() => Category, (category) => category.user, {
     onDelete: 'CASCADE',
