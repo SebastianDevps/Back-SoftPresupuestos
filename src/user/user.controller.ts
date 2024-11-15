@@ -4,7 +4,7 @@ import { CreateUserDto } from './dto/create-user.dto'
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guards'
 import { RolesGuard } from 'src/guard/roles.guard'
-import { Roles } from 'src/decorator/roles.decorator'
+import { Roles } from 'decorator/roles.decorator'
 import { UpdateUserDto } from './dto/update-user.dto'
 
 @Controller('user')

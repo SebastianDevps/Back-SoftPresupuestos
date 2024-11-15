@@ -3,7 +3,7 @@ import { AuthService } from './auth.service'
 import { LocalAuthGuard } from './guards/local-auth.guards'
 import { JwtAuthGuard } from './guards/jwt-auth.guards'
 import { RolesGuard } from 'src/guard/roles.guard'
-import { Roles } from 'src/decorator/roles.decorator'
+import { Roles } from 'decorator/roles.decorator'
 import { ApiOperation, ApiResponse } from '@nestjs/swagger'
 
 @Controller('auth')
